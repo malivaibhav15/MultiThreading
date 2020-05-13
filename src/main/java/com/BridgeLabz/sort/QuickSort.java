@@ -1,6 +1,8 @@
-package com.BridgeLabz;
+package com.BridgeLabz.sort;
 
 public class QuickSort extends QuickNMergeSort implements Runnable {
+
+    //METHOD TO FIND PIVOT AND INTERCHANGE THE VALUES
     int partition(int[] array, int first, int last) {
         int pivot = array[(first + last) / 2];
         while (first <= last) {
@@ -19,6 +21,7 @@ public class QuickSort extends QuickNMergeSort implements Runnable {
         return first;
     }
 
+    // METHOD TO FIND NEW PIVOT
     void quickSortRecursion(int[] array, int first, int last) {
         int newPivot = partition(array, first, last);
         if (first < newPivot - 1)
@@ -27,6 +30,7 @@ public class QuickSort extends QuickNMergeSort implements Runnable {
             quickSortRecursion(array, newPivot, last);
     }
 
+    //METHOD TO PRINT ARRAY
     void printArray(int[] array) {
         for (int tempArray : array) {
             System.out.print(tempArray + " ");
